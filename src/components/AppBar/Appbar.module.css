@@ -5,23 +5,13 @@
 }
 
 .navigation{
+    display: flex;
+    gap: 15px;
     font-weight: 700;
-        font-size: 25px;
-        line-height: 24px;
-        
-    
-    justify-content: start;
-    grid-gap: 15px;
-
+    font-size: 25px;
+    line-height: 24px;
 }
 
-.NavLink{
-    text-decoration: none;
-    color: black;
-    
-}
 
-.NavLink:active{
-    color: #3C4ADF;
-}
+
 

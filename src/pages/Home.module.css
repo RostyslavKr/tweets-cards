@@ -1,0 +1,16 @@
+.wrapperHomePage{
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.titleHomePage{
+    display: inline;
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 70px;
+    color: rgb(245, 245, 245);
+    background-color: #4A6FB4;
+    
+}

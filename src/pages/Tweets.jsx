@@ -19,7 +19,7 @@ const Tweets = () => {
       setFirstLoad(false);
       return;
     }
-    if (selected === 'all') {
+    if (page > 1 && selected === 'all') {
       fetchUsers(page).then(data => {
         setCurrentUsersLength(data.length);
         if (data.length !== 0) {
