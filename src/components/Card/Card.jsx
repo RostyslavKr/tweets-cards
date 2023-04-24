@@ -7,6 +7,14 @@ export const Card = ({ id, followers, avatar, user, tweets, status }) => {
   const [statusFollow, setStatusFollow] = useState(status);
   const [followersCount, setFollowers] = useState(followers);
   const [firstMount, setFirstMount] = useState(true);
+
+  useEffect(() => {
+    if (firstMount) {
+      return;
+    }
+    putUsers(id, followersCount, statusFollow);
+  }, [statusFollow, firstMount, followersCount, id]);
+
   const toggleStatusFollow = () => {
     setStatusFollow(!statusFollow);
     setFirstMount(false);
@@ -20,6 +28,7 @@ export const Card = ({ id, followers, avatar, user, tweets, status }) => {
       });
     }
   };
+
   const changeFollowers = number => {
     const numberArr = [number];
     const digits = numberArr.toString().split('');
@@ -30,13 +39,6 @@ export const Card = ({ id, followers, avatar, user, tweets, status }) => {
     return number;
   };
 
-  useEffect(() => {
-    if (firstMount) {
-      return;
-    }
-    putUsers(id, followersCount, statusFollow);
-  }, [statusFollow, firstMount, followersCount, id]);
-
   return (
     <li className={css.item}>
       <div className={css.wrapperItem}></div>
@@ -44,7 +46,6 @@ export const Card = ({ id, followers, avatar, user, tweets, status }) => {
         <div className={css.wrapperImage}>
           <img className={css.imageAvatar} src={avatar} alt={user} />
         </div>
-
         <h3 className={css.tweets}>{tweets} Tweets</h3>
         <h3 className={css.followers}>
           {changeFollowers(followersCount)} Followers

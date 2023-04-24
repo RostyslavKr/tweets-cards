@@ -54,6 +54,7 @@ const Tweets = () => {
   const onLoadMore = () => {
     setPage(prevPage => prevPage + 1);
   };
+
   const handleStatusFilter = status => {
     setUsers([]);
     setPage(1);

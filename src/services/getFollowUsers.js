@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 axios.defaults.baseURL = 'https://6442a8ce33997d3ef9165f47.mockapi.io';
 
 export const fetchFollowUsers = async (page, status) => {
@@ -8,7 +9,6 @@ export const fetchFollowUsers = async (page, status) => {
         status: `${status}`,
       },
     });
-
     return response.data;
   } catch (error) {
     return error.message;
