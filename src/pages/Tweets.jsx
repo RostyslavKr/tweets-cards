@@ -14,11 +14,12 @@ const Tweets = () => {
   const [firstLoad, setFirstLoad] = useState(true);
 
   useEffect(() => {
-    if (firstLoad) {
+    if (firstLoad && selected !== 'follow' && selected !== 'followings') {
       fetchUsers(page).then(data => setUsers(data));
       setFirstLoad(false);
       return;
     }
+
     if (page > 1 && selected === 'all') {
       fetchUsers(page).then(data => {
         setCurrentUsersLength(data.length);
@@ -60,6 +61,7 @@ const Tweets = () => {
     setPage(1);
     setCurrentUsersLength(null);
     setSelected(status);
+    setFirstLoad(true);
   };
 
   return (
