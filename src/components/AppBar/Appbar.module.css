@@ -1,0 +1,27 @@
+.header{
+    padding: 30px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 5px -20px;
+}
+
+.navigation{
+    font-weight: 700;
+        font-size: 25px;
+        line-height: 24px;
+        
+    
+    justify-content: start;
+    grid-gap: 15px;
+
+}
+
+.NavLink{
+    text-decoration: none;
+    color: black;
+    
+}
+
+.NavLink:active{
+    color: #3C4ADF;
+}
+

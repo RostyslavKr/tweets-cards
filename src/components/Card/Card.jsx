@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import putUsers from '../services/putUser';
-import css from './Card.module.css';
+import putUsers from '../../services/putUser';
+import css from '../Card/Card.module.css';
 import clsx from 'clsx';
 
 export const Card = ({ id, followers, avatar, user, tweets, status }) => {
